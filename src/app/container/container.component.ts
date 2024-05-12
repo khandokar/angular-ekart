@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { SearchComponent } from './search/search.component';
 
 @Component({
-  selector: 'product-list',
+  selector: 'app-container',
   standalone: true,
   imports: [SearchComponent],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  templateUrl: './container.component.html',
+  styleUrl: './container.component.css'
 })
-export class ProductListComponent {
+export class ContainerComponent {
   //name = 'John Doe';
   addToCart:number = 0;
   product = {
