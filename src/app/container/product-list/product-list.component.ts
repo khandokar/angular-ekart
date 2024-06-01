@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductComponent } from './product/product.component';
+import { FilterComponent } from './filter/filter.component';
 
 @Component({
   selector: 'product-list',
   standalone: true,
-  imports: [CommonModule,ProductComponent],
+  imports: [CommonModule,ProductComponent,FilterComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -536,4 +537,8 @@ export class ProductListComponent {
       slug: "michael-feburary-sk8-hi"
     }
   ];
+
+  totalProductCount = this.products.length;
+  totalProductInStock = this.products.filter(p=>p.is_in_inventory === true).length;
+  totalProductOutOfStock = this.products.filter(p=>p.is_in_inventory === false).length;
 }
