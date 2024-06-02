@@ -21,8 +21,9 @@ export class SearchComponent {
     this.searchTextChanged.emit(this.searchText);
   }
 
-  updateSearchText(event: any){
-      this.searchText = event.target.value;
-      //console.log(event.target.value);
+  updateSearchText(inputEl: HTMLInputElement){
+      //this.searchText = event.target.value;
+      console.log(inputEl.value);
+      this.searchTextChanged.emit(inputEl.value);
   }
 }
